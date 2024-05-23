@@ -6,3 +6,9 @@ class ClienteSerializer(serializers.ModelSerializer):
         model = Cliente
         fields = '__all__'
     
+    def validate_cpf(self, cpf):
+        if len(cpf) != 11:
+            raise serializers.ValidationError('O CPF deve ter exatamente 11 dígitos.')
+        
+        return cpf
+    
