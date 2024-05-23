@@ -21,3 +21,8 @@ class ClienteSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError('O RG deve ter exatamente 9 dígitos.')
         return rg
     
+    def validate_celular(self, celular):
+        if len(celular) < 11:
+            raise serializers.ValidationError('O celular deve ter no mínimo 11 dígitos.')
+        return celular
+    
