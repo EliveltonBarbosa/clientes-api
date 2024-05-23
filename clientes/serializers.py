@@ -16,3 +16,8 @@ class ClienteSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError('O CPF deve ter exatamente 11 dígitos.')
         return cpf
     
+    def validate_rg(self, rg):
+        if len(rg) != 9:
+            raise serializers.ValidationError('O RG deve ter exatamente 9 dígitos.')
+        return rg
+    
