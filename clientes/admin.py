@@ -11,4 +11,3 @@ class Clientes(admin.ModelAdmin):
     ordering = ('nome',)
 
 admin.site.register(Cliente, Clientes)
-
