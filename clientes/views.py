@@ -10,5 +10,5 @@ class ClientesViewSet(viewsets.ModelViewSet):
     serializer_class = ClienteSerializer
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     ordering_fields = ['nome']
-    search_fields = ['nome', 'cpf']
+    search_fields = ['nome', 'cpf', 'email']
     filterset_fields = ['ativo']
